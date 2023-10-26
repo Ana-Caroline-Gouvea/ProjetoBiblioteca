@@ -1,0 +1,30 @@
+﻿@model ProjetoBiblioteca.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Pessoa</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PessoaNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PessoaNome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PessoaRM)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PessoaRM)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PessoaId">Editar</a> |
+    <a asp-action="Index">voltar para lista</a>
+</div>
