@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Gêneros literários</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Adicionar</a>
 </p>
 <table class="table">
     <thead>
@@ -25,9 +25,9 @@
                 @Html.DisplayFor(modelItem => item.GeneroNome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.GeneroId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GeneroId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.GeneroId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.GeneroId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.GeneroId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.GeneroId">Deletar</a>
             </td>
         </tr>
 }
