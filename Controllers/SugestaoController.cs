@@ -47,7 +47,7 @@ namespace ProjetoBiblioteca.Controllers
         // GET: Sugestao/Create
         public IActionResult Create()
         {
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaId");
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace ProjetoBiblioteca.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaId", sugestao.PessoaId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", sugestao.PessoaId);
             return View(sugestao);
         }
 
@@ -81,7 +81,7 @@ namespace ProjetoBiblioteca.Controllers
             {
                 return NotFound();
             }
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaId", sugestao.PessoaId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", sugestao.PessoaId);
             return View(sugestao);
         }
 
@@ -117,7 +117,7 @@ namespace ProjetoBiblioteca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaId", sugestao.PessoaId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", sugestao.PessoaId);
             return View(sugestao);
         }
 
