@@ -8,19 +8,19 @@ namespace ProjetoBiblioteca.Models
         {
 
         }
-            public DbSet<Devolucao> Devolução { get; set; }
+        public DbSet<Devolucao> Devolução { get; set; }
 
-            public DbSet<Emprestimo> Empréstimo { get; set; }
+        public DbSet<Emprestimo> Empréstimo { get; set; }
 
-            public DbSet<Genero> Genêro { get; set; }
+        public DbSet<Genero> Genêro { get; set; }
 
-            public DbSet<Livro> Livro { get; set; }
+        public DbSet<Livro> Livro { get; set; }
 
-            public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
 
-            public DbSet<Reclamacao> Reclamação { get; set; }
+        public DbSet<Reclamacao> Reclamação { get; set; }
 
-            public DbSet<Sugestao> Sugestão { get; set; }
+        public DbSet<Sugestao> Sugestão { get; set; }
 
     }
 }

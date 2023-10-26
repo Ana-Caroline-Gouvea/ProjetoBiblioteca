@@ -30,17 +30,5 @@ namespace ProjetoBiblioteca.Models
         [Display(Name = "Data da Devolução")]
         public bool Devolvido { get; set; }
 
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
