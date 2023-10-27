@@ -9,6 +9,15 @@
 <p>
     <a asp-action="Create">Cadastrar novo livro</a>
 </p>
+<div>
+    @using (Html.BeginForm("Index", "Livro", FormMethod.Get))
+    {
+        <p>
+            Buscar: @Html.TextBox("pesquisa")
+            <input type="submit" value="Pesquisar" />
+        </p>
+    }
+</div>
 <table class="table">
     <thead>
         <tr> 

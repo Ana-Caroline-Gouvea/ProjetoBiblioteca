@@ -9,6 +9,15 @@
 <p>
     <a asp-action="Create">Faça uma devolução</a>
 </p>
+<div>
+    @using (Html.BeginForm("Index", "Devolucao", FormMethod.Get))
+    {
+        <p>
+            Buscar: @Html.TextBox("pesquisa")
+            <input type="submit" value="Pesquisar" />
+        </p>
+    }
+</div>
 <table class="table">
     <thead>
         <tr>
