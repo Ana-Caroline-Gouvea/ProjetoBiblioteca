@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ProjetoBiblioteca</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="https://use.fontawesome.com/3661c174df.js"></script>
     <link rel="stylesheet" href="~/ProjetoBiblioteca.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header class="heder">
+        <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProjetoBiblioteca</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img class="logo" src="/img/logo.png"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,7 +31,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Pessoa" asp-action="Index">Pessoa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Sugestao" asp-action="Index">Sugestao</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Sugestao" asp-action="Index">Sugestão</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Emprestimo" asp-action="Index">Emprestimo</a>
@@ -49,6 +51,17 @@
                     </ul>
                 </div>
             </div>
+            <li class="item-submenu">
+                <div class="icon">
+                    <i class="fa fa-user-circle-o" style="" aria-hidden="true"></i>
+                </div>
+                <ul class="submenu">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#"></a>Cadastre-se</li>
+                    <li><a href="#"></a>Sair</li>
+                </ul>
+            </li>
+
         </nav>
     </header>
     <div class="container">
