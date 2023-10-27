@@ -3,11 +3,14 @@
 }
 .frase1 {
     font-size: 35px;
-    display:block;
+    display: block;
+    margin-top: 50px;
+    color: #6A5852;
 }
 .frase2 {
     font-size: 25px;
     display: block;
+    color: #6A5852;
 }
 .heder {
     background-color: #DADDB1;
@@ -36,7 +39,7 @@
 .submenu {
     display: none;
     width: 210px;
-    height: 200px;
+    height: 150px;
     background-color: #DADDB1;
     position: absolute;
     top: 3.2rem;
@@ -56,6 +59,12 @@
 }
 
 .submenu > li a {
-    color: white;
+    color: black;
+    text-decoration: none;
+    list-style: none;
 
+}
+.item-submenu {
+    list-style: none;
+    color:black;
 }
