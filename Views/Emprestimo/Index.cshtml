@@ -9,6 +9,15 @@
 <p>
     <a asp-action="Create">Criar Emprestimo</a>
 </p>
+<div>
+    @using (Html.BeginForm("Index", "Emprestimo", FormMethod.Get))
+    {
+        <p>
+            Buscar: @Html.TextBox("pesquisa")
+            <input type="submit" value="Pesquisar" />
+        </p>
+    }
+</div>
 <table class="table">
     <thead>
         <tr>

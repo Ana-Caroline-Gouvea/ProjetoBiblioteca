@@ -19,11 +19,22 @@ namespace ProjetoBiblioteca.Controllers
         }
 
         // GET: Pessoa
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index( string pesquisa)
         {
-              return _context.Pessoa != null ? 
+            if(pesquisa== null)
+            {
+                return _context.Pessoa != null ?
                           View(await _context.Pessoa.ToListAsync()) :
                           Problem("Entity set 'Contexto.Pessoa'  is null.");
+            }
+            else
+            {
+                return _context.Pessoa != null ?
+                          View(await _context.Pessoa
+                          .Where(x=> x.PessoaNome.Contains(pesquisa)).ToListAsync()) :
+                          Problem("Entity set 'Contexto.Pessoa'  is null.");
+            }
+              
         }
 
         // GET: Pessoa/Details/5

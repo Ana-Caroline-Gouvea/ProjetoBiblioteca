@@ -19,11 +19,23 @@ namespace ProjetoBiblioteca.Controllers
         }
 
         // GET: Genero
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string pesquisa)
         {
-              return _context.Genêro != null ? 
+            if(pesquisa == null)
+            {
+                return _context.Genêro != null ?
                           View(await _context.Genêro.OrderBy(x => x.GeneroNome).ToListAsync()) :
                           Problem("Entity set 'Contexto.Genêro'  is null.");
+            }
+            else
+            {
+                return _context.Genêro != null ?
+                          View(await _context.Genêro
+                          .OrderBy(x => x.GeneroNome)
+                          .Where(x=> x.GeneroNome.Contains(pesquisa)).ToListAsync()) :
+                          Problem("Entity set 'Contexto.Genêro'  is null.");
+            }
+              
         }
 
         // GET: Genero/Details/5

@@ -19,10 +19,24 @@ namespace ProjetoBiblioteca.Controllers
         }
 
         // GET: Emprestimo
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index( string pesquisa)
         {
-            var contexto = _context.Empréstimo.Include(e => e.Livro).Include(e => e.Pessoa);
-            return View(await contexto.ToListAsync());
+            if(pesquisa == null)
+            {
+                var contexto = _context.Empréstimo
+                .Include(e => e.Livro)
+                .Include(e => e.Pessoa);
+                return View(await contexto.ToListAsync());
+            }
+            else
+            {
+                var contexto = _context.Empréstimo
+               .Include(e => e.Livro)
+               .Include(e => e.Pessoa)
+               .Where(e=> e.Livro.LivroNome.Contains(pesquisa));
+                return View(await contexto.ToListAsync());
+            }
+            
         }
 
         // GET: Emprestimo/Details/5
