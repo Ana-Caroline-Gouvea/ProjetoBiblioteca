@@ -48,8 +48,8 @@ namespace ProjetoBiblioteca.Controllers
         // GET: Emprestimo/Create
         public IActionResult Create()
         {
-            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroId");
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaId");
+            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroNome");
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace ProjetoBiblioteca.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroId", emprestimo.LivroId);
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaId", emprestimo.PessoaId);
+            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroNome", emprestimo.LivroId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", emprestimo.PessoaId);
             return View(emprestimo);
         }
 
@@ -84,8 +84,8 @@ namespace ProjetoBiblioteca.Controllers
             {
                 return NotFound();
             }
-            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroId", emprestimo.LivroId);
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaId", emprestimo.PessoaId);
+            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroNome", emprestimo.LivroId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", emprestimo.PessoaId);
             return View(emprestimo);
         }
 
@@ -121,8 +121,8 @@ namespace ProjetoBiblioteca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroId", emprestimo.LivroId);
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaId", emprestimo.PessoaId);
+            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroNome", emprestimo.LivroId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", emprestimo.PessoaId);
             return View(emprestimo);
         }
 
