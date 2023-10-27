@@ -12,6 +12,8 @@ builder.Services.AddControllersWithViews();
 /*builder.Services.AddDbContext<Contexto> //Isa
     (options => options.UseSqlServer("Data Source=SB-1490635\\SQLSENAI;Initial Catalog = ProjetoBiblioteca;Integrated Security = True;TrustServerCertificate = True"));*/
 
+/*builder.Services.AddDbContext<Contexto> //Melina
+    (options => options.UseSqlServer("Data Source=SB-1490650\\SQLSENAI;Initial Catalog = ProjetoBiblioteca;Integrated Security = True;TrustServerCertificate = True"));*/
 /*.Services.AddDbContext<Contexto> //Melina
     (options => options.UseSqlServer("Data Source=SB-1490650\\SQLSENAI;Initial Catalog = ProjetoBiblioteca;Integrated Security = True;TrustServerCertificate = True"));*/
 

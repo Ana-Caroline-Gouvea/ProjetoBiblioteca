@@ -22,8 +22,7 @@ namespace ProjetoBiblioteca.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Genêro != null ? 
-                          View(await _context
-                                     .Genêro.OrderBy(x=> x.GeneroNome).ToListAsync()) :
+                          View(await _context.Genêro.ToListAsync()) :
                           Problem("Entity set 'Contexto.Genêro'  is null.");
         }
 
