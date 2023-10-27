@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NuGet.Protocol.Plugins;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoBiblioteca.Models
@@ -16,7 +18,7 @@ namespace ProjetoBiblioteca.Models
 
         [Column("DataDevolucao")]
         [Display(Name = "Data da Devolução")]
-        public DateTime DataDevolucao { get; set;}
-
+        public DateTime DataDevolucao { get; set; }
+               
     }
-}
+ }

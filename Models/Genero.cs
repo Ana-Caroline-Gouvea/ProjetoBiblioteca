@@ -12,7 +12,7 @@ namespace ProjetoBiblioteca.Models
         public int GeneroId { get; set; }
 
         [Column("GeneroNome")]
-        [Display(Name = "Nome do Genêro")]
+        [Display(Name = "Nome do Gênero")]
         public string GeneroNome { get; set; } = string.Empty;
 
     }

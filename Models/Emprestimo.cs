@@ -30,5 +30,7 @@ namespace ProjetoBiblioteca.Models
         [Display(Name = "Data da Devolução")]
         public bool Devolvido { get; set; }
 
+        [NotMapped]
+        public string DescricaoEmprestimo { get; set; } = string.Empty;
     }
 }
