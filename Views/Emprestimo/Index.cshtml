@@ -7,14 +7,14 @@
 <h1>Empréstimo</h1>
 
 <p>
-    <button><a asp-action="Create">Criar Empréstimo</a></button>
+    <button><a class="" asp-action="Create">Criar Empréstimo</a></button>
 </p>
 <div>
     @using (Html.BeginForm("Index", "Emprestimo", FormMethod.Get))
     {
         <p>
             Buscar: @Html.TextBox("pesquisa")
-            <input type="submit" value="Pesquisar" />
+            <input class="pesquisa" type="submit" value="Pesquisar" />
         </p>
     }
 </div>
@@ -58,7 +58,7 @@
                 @Html.DisplayFor(modelItem => item.Devolvido)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EmprestimoId">Editar</a> |
+                <a asp-action="Edit"  asp-route-id="@item.EmprestimoId">Editar</a> |
                 <a asp-action="Details" asp-route-id="@item.EmprestimoId">Detalhes</a> |
             </td>
         </tr>

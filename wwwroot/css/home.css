@@ -1,19 +1,19 @@
 ﻿body {
-    background-color: #FBF0E3;
+    background-color: #D4D7D7;
 }
 .frase1 {
     font-size: 35px;
     display: block;
     margin-top: 50px;
-    color: #6A5852;
+    color: #8F766D;
 }
 .frase2 {
     font-size: 25px;
     display: block;
-    color: #6A5852;
+    color: #8F766D;
 }
 .heder {
-    background-color: #DADDB1;
+    background-color: #626262;
     height: 100px;
 }
 .caixa{
@@ -24,11 +24,13 @@
 }
 .logo{
     width:200px;
-    height: 75px;
+    height: 90px;
 }
 .icon {
     font-size: 50px;
-    margin-right: 100px;
+    margin-right: 80px;
+    color: black;
+    margin-bottom:10px;
 }
 .item-submenu:hover .submenu{
     display:block;
@@ -40,15 +42,14 @@
     display: none;
     width: 195px;
     height: 140px;
-    background-color: #DADDB1;
+    background-color: #626262;
     position: absolute;
     top: 3.2rem;
     left: 7rem;
-    padding: 1rem 1.2rem;
     box-sizing: border-box;
     text-align: left;
     font-family: sans-serif;
-    margin-left:80%;
+    margin-left: 80%;
     margin-top: 3%;
     list-style: none;
 }
@@ -59,12 +60,12 @@
 }
 
 .submenu > li a {
-    color: black;
+    color: white;
     text-decoration: none;
     list-style: none;
 
 }
-.item-submenu {
+.item-submenu  {
     list-style: none;
-    color:black;
+    color:white !important;
 }

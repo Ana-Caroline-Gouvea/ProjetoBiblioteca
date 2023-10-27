@@ -15,4 +15,22 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #F7FFFF;
+}
+button {
+    background-color: #D8F2F2;
+    border: solid 2px #62B6B7 ;
+    border-radius:5px;
+}
+button > a {
+    color: black !important;
+    text-decoration: none;
+}
+a {
+    color: #025955;
+    text-decoration: none;
+}
+.pesquisa {
+    background-color: #E4E4D0;
+    border:double;
 }
