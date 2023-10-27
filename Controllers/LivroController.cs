@@ -19,10 +19,21 @@ namespace ProjetoBiblioteca.Controllers
         }
 
         // GET: Livro
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string pesquisa)
         {
-            var contexto = _context.Livro.Include(l => l.Genero);
-            return View(await contexto.ToListAsync());
+            if(pesquisa == null)
+            {
+                var contexto = _context.Livro
+                .Include(l => l.Genero);
+                 return View(await contexto.ToListAsync());
+            }
+            else
+            {
+                var contexto = _context.Livro
+                .Include(l => l.Genero)
+                .Where(e => e.LivroNome.Contains(pesquisa));
+                 return View(await contexto.ToListAsync());
+            }
         }
 
         // GET: Livro/Details/5
