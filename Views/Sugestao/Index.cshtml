@@ -7,7 +7,7 @@
 <h1>Sugestão</h1>
 
 <p>
-    <a asp-action="Create">Criar novo</a>
+    <a asp-action="Create">Criar Sugestão</a>
 </p>
 <table class="table">
     <thead>
@@ -25,7 +25,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Pessoa.PessoaId)
+                @Html.DisplayFor(modelItem => item.Pessoa.PessoaNome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DescSugestao)
