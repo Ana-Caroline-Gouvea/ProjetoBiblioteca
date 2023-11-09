@@ -22,6 +22,11 @@ namespace ProjetoBiblioteca.Models
         [Display(Name = "Imagem do Livro")]
         public byte[]? LivroImagem { get; set; }
 
+        [NotMapped]
+        public string ImgExibicao { get; set; } = string.Empty;
+
+        [NotMapped]
+        public byte[]? LivroImagem2 { get; set; }
 
     }
 }

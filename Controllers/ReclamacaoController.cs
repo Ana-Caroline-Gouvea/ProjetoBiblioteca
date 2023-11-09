@@ -22,7 +22,20 @@ namespace ProjetoBiblioteca.Controllers
         public async Task<IActionResult> Index()
         {
             var contexto = _context.Reclamação.Include(r => r.Pessoa);
-            return View(await contexto.ToListAsync());
+
+            if(contexto != null)
+            {
+                foreach (var item in contexto)
+                {
+                    string imageBase64Data = Convert.ToBase64String(inArray: item.LivroImagem);
+                    item.ImgExibicao = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                }
+                return View(await contexto.ToListAsync());
+            }
+            else
+            {
+                return View();
+            }           
         }
 
         // GET: Reclamacao/Details/5
@@ -39,6 +52,12 @@ namespace ProjetoBiblioteca.Controllers
             if (reclamacao == null)
             {
                 return NotFound();
+            }
+            else
+            {
+                string imageBase64Data = Convert.ToBase64String(inArray: reclamacao.LivroImagem);
+                reclamacao.ImgExibicao = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                ViewData["ImgExibicao"] = reclamacao.ImgExibicao;
             }
 
             return View(reclamacao);
@@ -57,9 +76,19 @@ namespace ProjetoBiblioteca.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ReclamacaoId,PessoaId,DescReclamacao,LivroImagem")] Reclamacao reclamacao)
-        {
+        {            
             if (ModelState.IsValid)
             {
+                foreach (var file in Request.Form.Files)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    file.CopyTo(ms);
+                    reclamacao.LivroImagem = ms.ToArray();
+
+                    ms.Close();
+                    ms.Dispose();
+
+                }
                 _context.Add(reclamacao);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -81,6 +110,13 @@ namespace ProjetoBiblioteca.Controllers
             {
                 return NotFound();
             }
+            else
+            {                
+                string imageBase64Data = Convert.ToBase64String(inArray: reclamacao.LivroImagem);
+                reclamacao.ImgExibicao = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                ViewData["ImgExibicao"] = reclamacao.ImgExibicao;
+            }
+            reclamacao.LivroImagem2 = reclamacao.LivroImagem;
             ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", reclamacao.PessoaId);
             return View(reclamacao);
         }
@@ -90,13 +126,28 @@ namespace ProjetoBiblioteca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ReclamacaoId,PessoaId,DescReclamacao,LivroImagem")] Reclamacao reclamacao)
+        public async Task<IActionResult> Edit(int id, [Bind("ReclamacaoId,PessoaId,DescReclamacao,LivroImagem,LivroImagem2")] Reclamacao reclamacao)
         {
             if (id != reclamacao.ReclamacaoId)
             {
                 return NotFound();
             }
 
+            foreach (var file in Request.Form.Files)
+            {
+                MemoryStream ms = new MemoryStream();
+                file.CopyTo(ms);
+                reclamacao.LivroImagem = ms.ToArray();
+
+                ms.Close();
+                ms.Dispose();
+            }
+
+            if (reclamacao.LivroImagem == null)            
+                reclamacao.LivroImagem = reclamacao.LivroImagem2;
+            
+               
+            
             if (ModelState.IsValid)
             {
                 try
@@ -135,6 +186,12 @@ namespace ProjetoBiblioteca.Controllers
             if (reclamacao == null)
             {
                 return NotFound();
+            }
+            else
+            {
+                string imageBase64Data = Convert.ToBase64String(inArray: reclamacao.LivroImagem);
+                reclamacao.ImgExibicao = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                ViewData["ImgExibicao"] = reclamacao.ImgExibicao;
             }
 
             return View(reclamacao);

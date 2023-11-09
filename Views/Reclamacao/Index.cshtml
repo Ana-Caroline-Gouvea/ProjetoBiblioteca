@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" href="~/css/Reclamacao.css" asp-append-version="true" />
 
 <h1>Faça uma reclamação aqui</h1>
 
@@ -34,7 +35,7 @@
                 @Html.DisplayFor(modelItem => item.DescReclamacao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LivroImagem)
+                <img src="@Url.Content(item.ImgExibicao)" class="img-recl" />
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ReclamacaoId">Editar</a> |

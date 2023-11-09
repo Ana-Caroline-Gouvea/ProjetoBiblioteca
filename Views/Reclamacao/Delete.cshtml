@@ -27,7 +27,7 @@
             @Html.DisplayNameFor(model => model.LivroImagem)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LivroImagem)
+            <img src="@Url.Content(@ViewBag.ImgExibicao)" class="img-recl" />
         </dd>
     </dl>
     
