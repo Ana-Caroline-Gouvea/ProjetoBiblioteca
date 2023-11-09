@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #D4D7D7;
+    background-color: #F7FFFF;
 }
 .frase1 {
     font-size: 35px;
@@ -13,7 +13,6 @@
     color: #8F766D;
 }
 .heder {
-    background-color: #626262;
     height: 100px;
 }
 .caixa{
@@ -42,7 +41,7 @@
     display: none;
     width: 195px;
     height: 140px;
-    background-color: #626262;
+    background-color: #3D3D3D;
     position: absolute;
     top: 3.2rem;
     left: 7rem;

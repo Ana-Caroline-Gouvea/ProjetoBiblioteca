@@ -5,18 +5,19 @@
 }
 <link rel="stylesheet" href="~/css/emprestimocriarcss.css" asp-append-version="true" />
 <div class="titulo">
-    <h4>Empréstimo</h4>
+    <span>Empréstimo</span>
 </div>
 
 <div class="geral">
+
     <div class="box-1">
         <span>Na biblioteca, cada página é um portal para infinitas aventuras, onde o conhecimento é o tesouro mais valioso que se pode encontrar.</span>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-7">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
+                <div class="form-grup">
                     <label asp-for="Pessoa" class="control-label"></label>
                     <select  asp-for="PessoaId" class="form-control" asp-items="ViewBag.PessoaId"></select>
                 </div>
@@ -26,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="DataEmprestimo" class="control-label"></label>
-                    <input asp-for="DataEmprestimo" class="form-control" />
+                    <input  asp-for="DataEmprestimo" class="form-control" />
                     <span asp-validation-for="DataEmprestimo" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -34,19 +35,22 @@
                     <input asp-for="DevolucaoPrevista" class="form-control" />
                     <span asp-validation-for="DevolucaoPrevista" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Criar" class="btn btn-primary" />
-                </div>
-                <div>
-                    <button><a asp-action="Index">Voltar</a></button>
+                <a class="ajuda" href="#">Precisa de ajuda?</a>
+                <div class="gebotao">
+                    <div class="form-group">
+                        <input type="submit" value="Criar" class="btn btn-priary" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Voltar" class="btn btn-prmary" />
+                    </div>
                 </div>
             </form>
         </div>
     </div>
     <div class="box-3">
         <span>Emprestar livros é como emprestar asas à imaginação. Desperte seu voo!</span>
-        <img />
     </div>
+
 </div>
 
 
