@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<link rel="stylesheet" href="~/css/Reclamacao.css" asp-append-version="true" />
 
 <h1>Deletar</h1>
 
@@ -27,7 +28,7 @@
             @Html.DisplayNameFor(model => model.LivroImagem)
         </dt>
         <dd class = "col-sm-10">
-            <img src="@Url.Content(@ViewBag.ImgExibicao)" class="img-recl" />
+            <img src="@Url.Content(@ViewBag.ImgExibicao)" class="img-reclEdit" />
         </dd>
     </dl>
     
