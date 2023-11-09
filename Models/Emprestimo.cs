@@ -7,7 +7,7 @@ namespace ProjetoBiblioteca.Models
     public class Emprestimo
     {
         [Column("EmprestimoId")]
-        [Display(Name = "Código do Emprestimo")]
+        [Display(Name = "Código do Empréstimo")]
         public int EmprestimoId { get; set; }
 
         [ForeignKey("PessoaId")]

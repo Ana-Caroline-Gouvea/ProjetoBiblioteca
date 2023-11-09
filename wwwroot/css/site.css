@@ -28,8 +28,9 @@ button > a {
 }
 a {
     text-decoration: none;
+    color: #858585;
 }
 .pesquisa {
-    background-color: #E4E4D0;
-    border:double;
+    background-color: #C1C1C1;
+    color: #000000;
 }
