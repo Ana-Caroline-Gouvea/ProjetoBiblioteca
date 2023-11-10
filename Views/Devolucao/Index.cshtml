@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" href="~/css/BarraPesquisa.css" asp-append-version="true" />
 
 <h1>Devolução</h1>
 
@@ -12,7 +13,7 @@
 <div>
     @using (Html.BeginForm("Index", "Devolucao", FormMethod.Get))
     {
-        <p>
+        <p class="search">
             Buscar: @Html.TextBox("pesquisa")
             <input class="pesquisa" type="submit" value="Pesquisar" />
         </p>
