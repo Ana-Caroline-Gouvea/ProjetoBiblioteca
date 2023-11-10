@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
 }
 <link rel="stylesheet" href="~/css/BarraPesquisa.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/hover.css" asp-append-version="true" />
 
 <h1>Livros</h1>
 
@@ -11,7 +12,7 @@
 <div>
     @using (Html.BeginForm("Index", "Livro", FormMethod.Get))
     {
-        <button><a asp-action="Create">Cadastrar novo livro</a></button>
+        <button class="hover"><a asp-action="Create">Cadastrar</a></button>
         <p class="search">
             Buscar: @Html.TextBox("pesquisa")
             <input class="pesquisa" type="submit" value="Pesquisar" />
@@ -45,11 +46,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Genero.GeneroNome)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.LivroId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.LivroId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.LivroId">Deletar</a>
-            </td>
+                <td style="float:right">
+                    <button class="hover"><a asp-action="Edit" asp-route-id="@item.LivroId">Editar</a></button> |
+                    <button class="hover"><a asp-action="Details" asp-route-id="@item.LivroId">Detalhes</a></button> |
+                    <button class="hover"><a asp-action="Delete" asp-route-id="@item.LivroId">Deletar</a></button>
+                </td>
         </tr>
 }
     </tbody>

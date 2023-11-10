@@ -4,11 +4,12 @@
     ViewData["Title"] = "Index";
 }
 <link rel="stylesheet" href="~/css/Reclamacao.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/hover.css" asp-append-version="true" />
 
 <h1>Faça uma reclamação aqui</h1>
 
 <p>
-    <button> <a asp-action="Create">Crie uma reclamação</a></button>
+    <button class="hover"><a asp-action="Create">Reclamar</a></button>
 </p>
 <table class="table">
     <thead>
@@ -37,10 +38,10 @@
             <td>
                 <img src="@Url.Content(item.ImgExibicao)" class="img-recl" />
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ReclamacaoId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ReclamacaoId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReclamacaoId">Deletar</a>
+            <td style="float:right">
+                    <button class="hover"><a asp-action="Edit" asp-route-id="@item.ReclamacaoId">Editar</a></button> |
+                    <button class="hover"><a asp-action="Details" asp-route-id="@item.ReclamacaoId">Detalhes</a></button> |
+                    <button class="hover"><a asp-action="Delete" asp-route-id="@item.ReclamacaoId">Deletar</a></button>
             </td>
         </tr>
 }
