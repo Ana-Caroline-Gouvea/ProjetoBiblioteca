@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<link rel="stylesheet" href="~/css/emprestimocriarcss.css" asp-append-version="true" />
 <h1>Deletar</h1>
 
 <h3>Tem certeza que deseja deletar isso?</h3>
@@ -27,7 +27,11 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="SugestaoId" />
-        <input type="submit" value="Deletar" class="btn btn-danger" /> |
-        <button> <a asp-action="Index">Voltar</a></button>
+        <div class="gebotao" >
+            <div>
+                <input style="border: 1px solid black" type="submit" value="Deletar" class="btn btn-danger" /> <span style="margin-left:5px">|</span>
+            </div>
+            <button style="margin-left:10px;"><a asp-action="Index">Voltar</a></button>
+        </div>
     </form>
 </div>

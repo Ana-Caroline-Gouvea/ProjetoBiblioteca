@@ -3,36 +3,46 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<link rel="stylesheet" href="~/css/emprestimocriarcss.css" asp-append-version="true" />
 
-<h1>Editar</h1>
+<div class="titulo">
+    <span>Editar</span>
+    <h4>Devolução</h4>
+</div>
+<div class="geral">
+    <div class="box-1">
 
-<h4>Devolução</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="DevolucaoId" />
-            <div class="form-group">
-                <label asp-for="EmprestimoId" class="control-label"></label>
-                <select asp-for="EmprestimoId" class="form-control" asp-items="ViewBag.EmprestimoId"></select>
-                <span asp-validation-for="EmprestimoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataDevolucao" class="control-label"></label>
-                <input asp-for="DataDevolucao" class="form-control" />
-                <span asp-validation-for="DataDevolucao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-            </div>
-        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="DevolucaoId" />
+                <div class="form-group">
+                    <label asp-for="EmprestimoId" class="control-label"></label>
+                    <select asp-for="EmprestimoId" class="form-control" asp-items="ViewBag.EmprestimoId"></select>
+                    <span asp-validation-for="EmprestimoId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataDevolucao" class="control-label"></label>
+                    <input asp-for="DataDevolucao" class="form-control" />
+                    <span asp-validation-for="DataDevolucao" class="text-danger"></span>
+                </div>
+                <div class="gebotao">
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btn-priary" />
+                    </div>
+                    <button class="vol"><a asp-action="Index">Voltar</a></button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="box-3">
+
     </div>
 </div>
 
-<div>
-    <button><a asp-action="Index">Voltar</a></button>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

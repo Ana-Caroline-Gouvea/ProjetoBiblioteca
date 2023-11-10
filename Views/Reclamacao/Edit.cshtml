@@ -4,13 +4,19 @@
     ViewData["Title"] = "Edit";
 }
 <link rel="stylesheet" href="~/css/Reclamacao.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/emprestimocriarcss.css" asp-append-version="true" />
+<div class="titulo">
+    <span>Editar</span>
 
-<h1>Editar</h1>
+    <h4>Reclamação</h4>
+</div>
 
-<h4>Reclamação</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="geral">
+    <div class="box-1">
+
+    </div>
+    <div class="row">
+    <div class="col-md-7">
         <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ReclamacaoId" />
@@ -24,25 +30,30 @@
                 <input asp-for="DescReclamacao" class="form-control" />
                 <span asp-validation-for="DescReclamacao" class="text-danger"></span>
             </div>
+                <div class="form-group">
+                    <label asp-for="LivroImagem" class="control-label"></label>
+                    <input type="file" name="LivroImagem" id="LivroImagem" onchange="fileCheck(this);" />
+                    <span asp-validation-for="LivroImagem" class="text-danger"></span>
+                </div>
             <div>
                 <img src="@Url.Content(@ViewBag.ImgExibicao)" class="img-reclEdit" />
                 <input type="hidden" asp-for="LivroImagem2" />
             </div>
-            <div class="form-group">
-                <label asp-for="LivroImagem" class="control-label"></label>
-                <input type="file" name="LivroImagem" id="LivroImagem" onchange="fileCheck(this);" /><br />
-                <span asp-validation-for="LivroImagem" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
+
+             <div class="gebotao">
+                    <div class="form-group">
+                        <input type="submit" value="Criar" class="btn btn-priary" />
+                    </div>
+                    <button class="vol"><a asp-action="Index">Voltar</a></button>
             </div>
         </form>
     </div>
 </div>
+<div class="box-3">
 
-<div>
-    <button>  <a asp-action="Index">Voltar</a></button>
 </div>
+</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

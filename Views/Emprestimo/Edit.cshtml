@@ -3,23 +3,28 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<link rel="stylesheet" href="~/css/emprestimocriarcss.css" asp-append-version="true" />
+<div class="titulo">
+    <h1>Editar</h1>
+    <h4>Empréstimo</h4>
+</div>
 
-<h1>Editar</h1>
+<div class="geral">
+    <div class="box-1">
 
-<h4>Empréstimo</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    </div>
+    <div class="row">
+    <div class="col-md-7">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="EmprestimoId" />
             <div class="form-group">
-                <label asp-for="PessoaId" class="control-label"></label>
+                <label asp-for="Pessoa" class="control-label"></label>
                 <select asp-for="PessoaId" class="form-control" asp-items="ViewBag.PessoaId"></select>
                 <span asp-validation-for="PessoaId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LivroId" class="control-label"></label>
+                <label asp-for="Livro" class="control-label"></label>
                 <select asp-for="LivroId" class="form-control" asp-items="ViewBag.LivroId"></select>
                 <span asp-validation-for="LivroId" class="text-danger"></span>
             </div>
@@ -33,16 +38,20 @@
                 <input asp-for="DevolucaoPrevista" class="form-control" />
                 <span asp-validation-for="DevolucaoPrevista" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-            </div>
+            <div class="gebotao">
+                        <div class="form-group">
+                            <input type="submit" value="Salvar" class="btn btn-priary" />
+                        </div>
+                    <button class="vol"><a asp-action="Index">Voltar</a></button>
+                    </div>
         </form>
     </div>
 </div>
+<div class="box-3">
 
-<div>
-    <button><a asp-action="Index">Voltar</a></button>
 </div>
+</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
