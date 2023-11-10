@@ -3,41 +3,53 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<link rel="stylesheet" href="~/css/emprestimocriarcss.css" asp-append-version="true" />
+<div class="titulo">
+    <span>Editar</span>
 
-<h1>Editar</h1>
+    <h4>Livro</h4>
+</div>
 
-<h4>Livro</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="LivroId" />
-            <div class="form-group">
-                <label asp-for="LivroNome" class="control-label"></label>
-                <input asp-for="LivroNome" class="form-control" />
-                <span asp-validation-for="LivroNome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LivroAutor" class="control-label"></label>
-                <input asp-for="LivroAutor" class="form-control" />
-                <span asp-validation-for="LivroAutor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GeneroId" class="control-label"></label>
-                <select asp-for="GeneroId" class="form-control" asp-items="ViewBag.GeneroId"></select>
-                <span asp-validation-for="GeneroId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="geral">
+    <div class="box-1">
+
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="LivroId" />
+                <div class="form-group">
+                    <label asp-for="LivroNome" class="control-label"></label>
+                    <input asp-for="LivroNome" class="form-control" />
+                    <span asp-validation-for="LivroNome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LivroAutor" class="control-label"></label>
+                    <input asp-for="LivroAutor" class="form-control" />
+                    <span asp-validation-for="LivroAutor" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GeneroId" class="control-label"></label>
+                    <select asp-for="GeneroId" class="form-control" asp-items="ViewBag.GeneroId"></select>
+                    <span asp-validation-for="GeneroId" class="text-danger"></span>
+                </div>
+                    <div class="gebotao">
+                    <div class="form-group">
+                        <input type="submit" value="Criar" class="btn btn-priary" />
+                    </div>
+                    <button class="vol"><a asp-action="Index">Voltar</a></button>
+                    </div>
+
+
+            </form>
+        </div>
+    </div>
+    <div class="box-3">
+
     </div>
 </div>
 
-<div>
-    <button>  <a asp-action="Index">Voltar</a></button>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
