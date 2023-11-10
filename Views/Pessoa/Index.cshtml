@@ -8,11 +8,12 @@
 <h1>Aluno</h1>
 
 <p>
-    <button> <a asp-action="Create">Criar novo</a></button>
+    
 </p>
 <div>
     @using (Html.BeginForm("Index", "Pessoa", FormMethod.Get))
     {
+        <button> <a asp-action="Create">Criar novo</a></button>
         <p class="search">
                 Buscar: @Html.TextBox("pesquisa")
             <input class="pesquisa" type="submit" value="Pesquisar" />

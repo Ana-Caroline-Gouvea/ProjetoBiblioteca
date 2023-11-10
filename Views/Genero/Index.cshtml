@@ -7,12 +7,10 @@
 
 <h1>Gêneros literários</h1>
 
-<p>
-    <button><a asp-action="Create">Cadastrar novo gênero</a></button>
-</p>
 <div>
     @using (Html.BeginForm("Index", "Genero", FormMethod.Get))
     {
+        <button><a asp-action="Create">Cadastrar novo gênero</a></button>
         <p class="search">
             Buscar: @Html.TextBox("pesquisa")
             <input class="pesquisa" type="submit" value="Pesquisar" />

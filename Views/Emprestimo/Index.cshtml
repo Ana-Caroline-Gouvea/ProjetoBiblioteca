@@ -7,12 +7,11 @@
 
 <h1>Empréstimo</h1>
 
-<p>
-    <button><a class="" asp-action="Create">Criar Empréstimo</a></button>
-</p>
+
 <div>
     @using (Html.BeginForm("Index", "Emprestimo", FormMethod.Get))
     {
+        <button><a class="" asp-action="Create">Criar Empréstimo</a></button>
         <p class="search">
             Buscar: @Html.TextBox("pesquisa")
             <input class="pesquisa" type="submit" value="Pesquisar" />
