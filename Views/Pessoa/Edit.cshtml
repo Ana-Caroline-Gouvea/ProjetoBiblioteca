@@ -3,13 +3,18 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<link rel="stylesheet" href="~/css/emprestimocriarcss.css" asp-append-version="true" />
+<div class="titulo">
+    <span>Editar</span>
+    <h4>Aluno</h4>
+</div>
 
-<h1>Editar</h1>
+<div class="geral">
+    <div class="box-1">
 
-<h4>Aluno</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    </div>
+    <div class="row">
+    <div class="col-md-7">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="PessoaId" />
@@ -23,16 +28,20 @@
                 <input asp-for="PessoaRM" class="form-control" />
                 <span asp-validation-for="PessoaRM" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Savar" class="btn btn-primary" />
+            <div class="gebotao">
+                    <div class="form-group">
+                        <input type="submit" value="Criar" class="btn btn-priary" />
+                    </div>
+                    <button class="vol"><a asp-action="Index">Voltar</a></button>
             </div>
         </form>
     </div>
 </div>
+<div class="box-3">
 
-<div>
-    <button><a asp-action="Index">Voltar</a></button>
 </div>
+</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
