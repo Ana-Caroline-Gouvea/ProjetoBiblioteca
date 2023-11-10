@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
 }
 <link rel="stylesheet" href="~/css/BarraPesquisa.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/hover.css" asp-append-version="true" />
 
 <h1>Empréstimo</h1>
 
@@ -11,7 +12,7 @@
 <div>
     @using (Html.BeginForm("Index", "Emprestimo", FormMethod.Get))
     {
-        <button><a class="" asp-action="Create">Criar Empréstimo</a></button>
+        <button class="hover"><a class="" asp-action="Create">Emprestar</a></button>
         <p class="search">
             Buscar: @Html.TextBox("pesquisa")
             <input class="pesquisa" type="submit" value="Pesquisar" />
@@ -58,8 +59,9 @@
                 @Html.DisplayFor(modelItem => item.Devolvido)
             </td>
             <td>
-                <a asp-action="Edit"  asp-route-id="@item.EmprestimoId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.EmprestimoId">Detalhes</a>
+                
+                    <button class="hover"><a asp-action="Edit" asp-route-id="@item.EmprestimoId">Editar</a></button> |
+                    <button class="hover"><a asp-action="Details" asp-route-id="@item.EmprestimoId">Detalhes</a></button>
             </td>
         </tr>
 }
