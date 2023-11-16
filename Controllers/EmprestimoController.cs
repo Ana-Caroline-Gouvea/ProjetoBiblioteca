@@ -62,8 +62,8 @@ namespace ProjetoBiblioteca.Controllers
         // GET: Emprestimo/Create
         public IActionResult Create()
         {
-            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroNome");
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome");
+            ViewData["LivroId"] = new SelectList(_context.Livro.OrderBy(x => x.LivroNome), "LivroId", "LivroNome");
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa.OrderBy(x => x.PessoaNome), "PessoaId", "PessoaNome");
             return View();
         }
 
@@ -80,8 +80,8 @@ namespace ProjetoBiblioteca.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroNome", emprestimo.LivroId);
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", emprestimo.PessoaId);
+            ViewData["LivroId"] = new SelectList(_context.Livro.OrderBy(x => x.LivroNome), "LivroId", "LivroNome", emprestimo.LivroId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa.OrderBy(x => x.PessoaNome), "PessoaId", "PessoaNome", emprestimo.PessoaId);
             return View(emprestimo);
         }
 
@@ -98,8 +98,8 @@ namespace ProjetoBiblioteca.Controllers
             {
                 return NotFound();
             }
-            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroNome", emprestimo.LivroId);
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", emprestimo.PessoaId);
+            ViewData["LivroId"] = new SelectList(_context.Livro.OrderBy(x => x.LivroNome), "LivroId", "LivroNome", emprestimo.LivroId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa.OrderBy(x => x.PessoaNome), "PessoaId", "PessoaNome", emprestimo.PessoaId);
             return View(emprestimo);
         }
 
@@ -135,8 +135,8 @@ namespace ProjetoBiblioteca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LivroId"] = new SelectList(_context.Livro, "LivroId", "LivroNome", emprestimo.LivroId);
-            ViewData["PessoaId"] = new SelectList(_context.Pessoa, "PessoaId", "PessoaNome", emprestimo.PessoaId);
+            ViewData["LivroId"] = new SelectList(_context.Livro.OrderBy(x => x.LivroNome), "LivroId", "LivroNome", emprestimo.LivroId);
+            ViewData["PessoaId"] = new SelectList(_context.Pessoa.OrderBy(x => x.PessoaNome), "PessoaId", "PessoaNome", emprestimo.PessoaId);
             return View(emprestimo);
         }
 

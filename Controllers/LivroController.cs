@@ -25,12 +25,13 @@ namespace ProjetoBiblioteca.Controllers
             {
                 var contexto = _context.Livro
                 .Include(l => l.Genero);
-                 return View(await contexto.ToListAsync());
+                 return View(await contexto.OrderBy(x => x.LivroNome).ToListAsync());
             }
             else
             {
                 var contexto = _context.Livro
                 .Include(l => l.Genero)
+                .OrderBy(x => x.LivroNome)
                 .Where(e => e.LivroNome.Contains(pesquisa));
                  return View(await contexto.ToListAsync());
             }

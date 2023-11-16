@@ -24,13 +24,14 @@ namespace ProjetoBiblioteca.Controllers
             if(pesquisa== null)
             {
                 return _context.Pessoa != null ?
-                          View(await _context.Pessoa.ToListAsync()) :
+                          View(await _context.Pessoa.OrderBy(x => x.PessoaNome).ToListAsync()) :
                           Problem("Entity set 'Contexto.Pessoa'  is null.");
             }
             else
             {
                 return _context.Pessoa != null ?
                           View(await _context.Pessoa
+                          .OrderBy(x => x.PessoaNome)
                           .Where(x=> x.PessoaNome.Contains(pesquisa)).ToListAsync()) :
                           Problem("Entity set 'Contexto.Pessoa'  is null.");
             }
